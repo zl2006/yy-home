@@ -15,6 +15,10 @@
 		<java_source_version>1.7</java_source_version>
 		<java_target_version>1.7</java_target_version>
 
+		<!--日志-->
+		<slf4j.version>1.7.9</slf4j.version>	
+		<perf4j.version>0.9.16</perf4j.version>  
+
 		<!--web-->
 		<jspapi.version>2.2</jspapi.version>
 		<servlet.version>3.0.1</servlet.version>
@@ -22,7 +26,7 @@
 		<elapi.version>2.2</elapi.version>
 		
 		<!--j2ee框架-->
-		<spring.version>4.1.1.RELEASE</spring.version>
+		<spring.version>4.1.4.RELEASE</spring.version>
 		<spring-asm.version>3.1.4.RELEASE</spring-asm.version>
 		<urlrewriter.version>4.0.4</urlrewriter.version>
 
@@ -78,12 +82,7 @@
 		<surefire.version>2.5</surefire.version>
 		<junit.version>4.9</junit.version>
 		
-		<!--日志-->
-		<commons.logging.version>1.1.1</commons.logging.version>
-		<log4j.version>1.2.12</log4j.version>	
-		<perf4j.version>0.9.16</perf4j.version>  
-		<slf4j.version>1.6.4</slf4j.version>
-		<logback.version>1.1.1</logback.version>
+		
 		
 		<!--代理及字节码操作 -->
 		<aspectjrt.version>1.6.2</aspectjrt.version>
@@ -137,6 +136,34 @@
 	<!--依赖申明-->
 	<dependencyManagement>
 		<dependencies>
+			<!--日志配置-->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j.version}</version>  
+			</dependency>
+			<dependency><!--桥接log4j log-->
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>${slf4j.version}</version>  
+			</dependency>
+			<dependency><!--桥接jdk14 log--> 
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-jdk14</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency><!--桥接common log--> 
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-jcl</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency><!--性能日志-->
+				<groupId>org.perf4j</groupId>
+				<artifactId>perf4j</artifactId>
+				<version>${perf4j.version}</version>
+			</dependency>
+			<!--end-->
+
 			<!--spring配置-->
 			<dependency><!-- 提供了一种类似于JNDI注册器的框架式的对象访问方法。Context模块继承了Beans的特性，然后添加了对国际化(例如资源绑定)、事件传播、资源加载和对Context的透明创建的支持。Context模块同时也支持J2EE的一些特性，例如EJB、JMX和基础的远程处理-->
 				<groupId>org.springframework</groupId>
@@ -301,30 +328,7 @@
 				<version>${taobao.tairclient.version}</version>
 			</dependency>
 			<!--end-->
-			
-			
-			<!--日志配置-->
-			<dependency>
-				<groupId>commons-logging</groupId>
-				<artifactId>commons-logging</artifactId>
-				<version>${commons.logging.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>log4j</groupId>
-				<artifactId>log4j</artifactId>
-				<version>${log4j.version}</version> 
-			</dependency>
-			<dependency><!--性能日志-->
-				<groupId>org.perf4j</groupId>
-				<artifactId>perf4j</artifactId>
-				<version>${perf4j.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-log4j12</artifactId>
-				<version>${slf4j.version}</version>  
-			</dependency>
-			<!--end-->
+
 			
 	
 			<!--单元测试配置-->
@@ -374,11 +378,6 @@
 				<artifactId>fastjson</artifactId>
 				<version>${fastjson.version}</version>
 			</dependency>	
-			<dependency><!--模板配置-->
-				<groupId>org.freemarker</groupId>
-				<artifactId>freemarker</artifactId>
-				<version>${freemarker.version}</version>
-			</dependency>
 			<dependency><!--常用工具类-->
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-lang3</artifactId>
