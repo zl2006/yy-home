@@ -47,7 +47,7 @@
 		<taobao.tairclient.version>2.3.1</taobao.tairclient.version>
 		
 		<!--消息中间件-->
-		<rocketmq.version>3.1.7</rocketmq.version> 
+		<rocketmq.version>3.2.2</rocketmq.version> 
 
 		<!--工具相关-->
 		<freemarker.version>2.3.9</freemarker.version>
