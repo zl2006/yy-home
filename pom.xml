@@ -44,7 +44,7 @@
 		<ehcache.version>1.6.1</ehcache.version>
 		<xmemcached.version>1.4.2</xmemcached.version>
 		<springcache.version>3.5.0</springcache.version>
-		<taobao.tairclient.version>2.3.1</taobao.tairclient.version>
+		<taobao.tairclient.version>2.3.4</taobao.tairclient.version>
 		
 		<!--消息中间件-->
 		<rocketmq.version>3.2.2</rocketmq.version> 
