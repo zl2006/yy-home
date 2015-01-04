@@ -302,15 +302,26 @@
 				<version>${ehcache.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.googlecode.xmemcached</groupId>
-				<artifactId>xmemcached</artifactId>
-				<version>${xmemcached.version}</version>
+				<groupId>com.google.code.simple-spring-memcached</groupId>
+				<artifactId>spymemcached-provider</artifactId>
+				<version>${springcache.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.google.code.simple-spring-memcached</groupId>
 				<artifactId>xmemcached-provider</artifactId>
 				<version>${springcache.version}</version> 
 			</dependency> 
+			<dependency>
+				<groupId>com.google.code.simple-spring-memcached</groupId>
+				<artifactId>aws-elasticache-provider</artifactId>
+				<version>${springcache.version}</version>
+			</dependency>  
+			<!--
+			<dependency>
+				<groupId>com.googlecode.xmemcached</groupId>
+				<artifactId>xmemcached</artifactId>
+				<version>${xmemcached.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>com.google.code.simple-spring-memcached</groupId>
 				<artifactId>spring-cache</artifactId>
@@ -321,7 +332,7 @@
 						<groupId>org.springframework</groupId>
 					</exclusion>
 				</exclusions>
-			</dependency>
+			</dependency>-->
 			<dependency><!--tair缓存客户端-->
 				<groupId>com.taobao.tair</groupId>
 				<artifactId>tair-client</artifactId>
