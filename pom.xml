@@ -713,4 +713,37 @@
 
 		</plugins>
 	</build>
+	<profiles>
+		<profile>
+			<id>default-profile</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+				<file>
+					<exists>${env.JAVA_HOME}/lib/jconsole.jar</exists>
+				</file>
+			</activation>
+			<properties>
+				<toolsjar>${env.JAVA_HOME}/lib/tools.jar</toolsjar>
+				<jconsolejar>${env.JAVA_HOME}/lib/jconsole.jar</jconsolejar>
+			</properties>
+			<dependencies>
+				<dependency>
+					<groupId>com.alibaba</groupId>
+					<artifactId>jconsole</artifactId>
+					<version>1.8.0</version>
+					<scope>system</scope>
+					<systemPath>${jconsolejar}</systemPath>
+					<optional>true</optional>
+				</dependency>
+				<dependency>
+					<groupId>com.alibaba</groupId>
+					<artifactId>tools</artifactId>
+					<version>1.8.0</version>
+					<scope>system</scope>
+					<systemPath>${toolsjar}</systemPath>
+					<optional>true</optional>
+				</dependency>
+			</dependencies>
+		</profile>
+	</profiles>
 </project>
