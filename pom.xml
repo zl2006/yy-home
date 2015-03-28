@@ -97,8 +97,9 @@
 		<hibernate.validator.version>5.0.1.Final</hibernate.validator.version>
 		<jodatime.version>2.3</jodatime.version>
 
-		<!--其它-->
+		<!--其它-->		
 		<jxl.version>2.6.3</jxl.version>
+		<quartz.version>2.2.1</quartz.version>
 			
 	</properties>
 	
@@ -675,6 +676,14 @@
 				<version>${freemarker.version}</version>
 			</dependency>
 			<!--end-->
+
+			<!-- 任务 -->
+			<dependency>
+				<groupId>org.quartz-scheduler</groupId>
+				<artifactId>quartz</artifactId>
+				<version>${quartz.version}</version>
+			</dependency>
+			<!--end-->
 	
 
 		</dependencies>
@@ -691,7 +700,7 @@
 				</includes>
 				<excludes>
 					<exclude>**/.svn/</exclude>
-					<exclude>**/sql/</exclude>
+					<!--exclude>**/sql/</exclude-->
 				</excludes>
 			</resource>
 		</resources>
