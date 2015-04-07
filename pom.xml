@@ -34,13 +34,14 @@
 		<framework.verion>1.0</framework.verion>
 		<dubbo.version>2.5.4-SNAPSHOT</dubbo.version><!--服务化框架-->
 		<zookeeper.version>3.4.6</zookeeper.version><!--分布式协作服务中间件-->
-		<zkclient.version>0.4</zkclient.version>
+		<zkclient.version>0.4</zkclient.version>    <!--zookeeper客户端-->
+		<curator.version>2.7.1</curator.version>    <!--zookeeper客户端，提供了共享锁，队列，集中配置，通知等功能-->
 
 		<!--数据库中间件-->
-		<c3p0.version>0.9.1.2</c3p0.version>
-		<druid.version>1.0.11</druid.version>
-		<mybatis.version>3.2.8</mybatis.version>
-		<oracle.version>11.1.0.6.0</oracle.version>
+		<c3p0.version>0.9.1.2</c3p0.version>		<!--连接池-->
+		<druid.version>1.0.11</druid.version>		<!--连接池，提供了监控，sql防火墙功能-->
+		<mybatis.version>3.2.8</mybatis.version>	<!--orm中间件-->
+		<oracle.version>11.1.0.6.0</oracle.version>	<!--数据库驱动-->
 		<hsqldb.version>2.2.8</hsqldb.version>
 		<mysql.version>5.1.6</mysql.version>
 
@@ -51,7 +52,7 @@
 		<taobao.tairclient.version>2.3.1</taobao.tairclient.version>
 		
 		<!--消息中间件-->
-		<rocketmq.version>3.2.2</rocketmq.version> 
+		<rocketmq.version>3.2.2</rocketmq.version>	<!--淘宝的消息中间件-->
 
 		<!--工具相关-->
 		<freemarker.version>2.3.9</freemarker.version>
@@ -66,7 +67,7 @@
 		<commons.net.version>3.2</commons.net.version>
 		<xstream.version>1.4.4</xstream.version>
 		<fileupload.version>1.2.2</fileupload.version>
-		<guava.version>18.0</guava.version>
+		<guava.version>18.0</guava.version>			<!--google提供的java超级工具集，超好用-->
 		
 		<!--模板引擎-->
 		<velocity.version>1.7</velocity.version>
@@ -99,6 +100,8 @@
 
 		<!--其它-->		
 		<jxl.version>2.6.3</jxl.version>
+
+		<!--任务调试-->
 		<quartz.version>2.2.1</quartz.version>
 			
 	</properties>
@@ -136,8 +139,7 @@
 	<!--依赖申明-->
 	<dependencyManagement>
 		<dependencies>
-			<!--日志配置-->
-			<!-- LOGGING begin -->  
+			<!--日志配置 start-->
 			<!-- slf4j -->  
 			<dependency>  
 			    <groupId>org.slf4j</groupId>  
@@ -171,9 +173,10 @@
 				<artifactId>perf4j</artifactId>
 				<version>${perf4j.version}</version>
 			</dependency>
-			<!--end-->
+			<!--日志配置 end-->
 
-			<!--spring配置-->
+
+			<!--spring配置 start-->
 			<dependency><!-- 提供了一种类似于JNDI注册器的框架式的对象访问方法。Context模块继承了Beans的特性，然后添加了对国际化(例如资源绑定)、事件传播、资源加载和对Context的透明创建的支持。Context模块同时也支持J2EE的一些特性，例如EJB、JMX和基础的远程处理-->
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-context</artifactId>
@@ -265,7 +268,7 @@
 
 			
 			
-			<!--数据库配置-->
+			<!--数据库配置 start-->
 			<dependency><!-- mybatis DAO中间件-->
 				<groupId>org.mybatis</groupId>
 				<artifactId>mybatis</artifactId>
@@ -301,10 +304,10 @@
 				<artifactId>druid</artifactId>  
 				<version>${druid.version}</version>  
 			</dependency> 
-			<!--end-->
+			<!--数据库配置 end-->
 			
 			
-			<!--缓存配置-->
+			<!--缓存配置 start-->
 			<dependency>
 				<groupId>net.sf.ehcache</groupId>
 				<artifactId>ehcache</artifactId>
@@ -347,11 +350,11 @@
 				<artifactId>tair-client</artifactId>
 				<version>${taobao.tairclient.version}</version>
 			</dependency>
-			<!--end-->
+			<!--缓存配置 end-->
 
 			
 	
-			<!--单元测试配置-->
+			<!--单元测试配置 start-->
 			<dependency>
 				<groupId>org.mockito</groupId>
 				<artifactId>mockito-all</artifactId>
@@ -376,7 +379,7 @@
 			    <version>${hamcrest.core.version}</version>  
 			    <scope>test</scope>  
 			</dependency>  
-			<!--end-->
+			<!--单元测试配置 end-->
 			
 			
 			<!--aop代理配置-->
@@ -601,7 +604,11 @@
 				<artifactId>framework-document</artifactId>
 				<version>${framework.verion}</version>
 			</dependency>
-			<dependency><!--服务化框架-->
+			<!--end-->
+
+
+			<!--服务化框架-->
+			<dependency>
 				<groupId>com.alibaba</groupId>	
 				<artifactId>dubbo</artifactId>
 				<version>${dubbo.version}</version>
@@ -622,7 +629,31 @@
 				<artifactId>zkclient</artifactId>
 				<version>${zkclient.version}</version>
 			</dependency>
+			<dependency><!-- zookeeper框架curator -->
+				<groupId>org.apache.curator</groupId>
+				<artifactId>curator-framework</artifactId>
+				<version>${curator.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.curator</groupId>
+				<artifactId>curator-test</artifactId>
+				<scope>test</scope>
+				<version>${curator.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.curator</groupId>
+				<artifactId>curator-recipes</artifactId>
+    				<version>${curator.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.curator</groupId>
+				<artifactId>curator-client</artifactId>
+    				<version>${curator.version}</version>
+			</dependency>
+
+
 			<!--end-->
+
 
 			<!--ROCKET消息服务-->
 			<dependency>
@@ -676,6 +707,7 @@
 				<version>${freemarker.version}</version>
 			</dependency>
 			<!--end-->
+
 
 			<!-- 任务 -->
 			<dependency>
