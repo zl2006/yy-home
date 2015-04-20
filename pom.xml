@@ -65,7 +65,6 @@
 		<commons.beanutils.version>1.8.3</commons.beanutils.version>
 		<commons.httpclient.version>4.2.3</commons.httpclient.version>
 		<commons.net.version>3.2</commons.net.version>
-		<xstream.version>1.4.4</xstream.version>
 		<fileupload.version>1.2.2</fileupload.version>
 		<guava.version>18.0</guava.version>			<!--google提供的java超级工具集，超好用-->
 		
@@ -79,6 +78,7 @@
 		<hessian.version>4.0.7</hessian.version>
 		<protobuf.version>2.4.1</protobuf.version>
 		<kryo.version>2.19</kryo.version>
+		<xstream.version>1.4.8</xstream.version>
 
 		<!--测试相关-->
 		<mockito.version>1.9.0</mockito.version>
