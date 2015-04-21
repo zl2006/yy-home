@@ -53,6 +53,7 @@
 		
 		<!--消息中间件-->
 		<rocketmq.version>3.2.2</rocketmq.version>	<!--淘宝的消息中间件-->
+		<activemq.version>5.11.0</activemq.version>
 
 		<!--工具相关-->
 		<freemarker.version>2.3.9</freemarker.version>
@@ -271,6 +272,11 @@
 				<version>${spring.version}</version>
 			</dependency>
 			<!--end-->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jms</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
 
 			
 			
@@ -684,6 +690,13 @@
 		      		<version>${logback.version}</version>
 		    	</dependency>
 			<!--end-->
+			<!--activemq 消息-->
+			<dependency>
+				<groupId>org.apache.activemq</groupId>
+				<artifactId>activemq-all</artifactId>
+				<version>${activemq.version}</version>
+			</dependency>
+			
 
 
 			<!-- 模板引擎 -->
