@@ -50,6 +50,8 @@
 		<xmemcached.version>1.4.2</xmemcached.version>
 		<springcache.version>3.5.0</springcache.version>
 		<taobao.tairclient.version>2.3.1</taobao.tairclient.version>
+		<springdataredis.version>1.6.0.RELEASE</springdataredis.version>
+		
 		
 		<!--消息中间件-->
 		<rocketmq.version>3.2.2</rocketmq.version>	<!--淘宝的消息中间件-->
@@ -320,6 +322,11 @@
 			
 			
 			<!--缓存配置 start-->
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-redis</artifactId>
+				<version>${springdataredis.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>net.sf.ehcache</groupId>
 				<artifactId>ehcache</artifactId>
