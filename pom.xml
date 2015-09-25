@@ -70,6 +70,7 @@
 		<commons.net.version>3.2</commons.net.version>
 		<fileupload.version>1.2.2</fileupload.version>
 		<guava.version>18.0</guava.version>			<!--google提供的java超级工具集，超好用-->
+		<pinyin4j.version>1.0.0-SNAPSHOT</pinyin4j.version>
 		
 		<!--模板引擎,布局组件-->
 		<velocity.version>1.7</velocity.version>
@@ -461,7 +462,7 @@
 				<artifactId>httpclient</artifactId>
 				<version>${commons.httpclient.version}</version>
 			</dependency>
-			<dependency><!--网络通信-->
+			<dependency><!--网络通信，ftp，smtp, pop3，telnet,time等-->
 				<groupId>commons-net</groupId>
 				<artifactId>commons-net</artifactId>
 				<version>${commons.net.version}</version>
@@ -480,6 +481,11 @@
 				<groupId>commons-collections</groupId>
 				<artifactId>commons-collections</artifactId>
 				<version>3.2</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.cocho.java.lib.pinyin4j</groupId>
+    				<artifactId>pinyin4j</artifactId>
+				<version>${pinyin4j.version}</version>
 			</dependency>
 
 			<dependency><!--文件上传-->
