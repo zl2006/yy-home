@@ -102,6 +102,7 @@
 		<!--验证与格式化处理-->
 		<hibernate.validator.version>5.0.1.Final</hibernate.validator.version>
 		<jodatime.version>2.3</jodatime.version>
+		<kaptcha.version>2.3.2</kaptcha.version>
 
 		<!--其它-->		
 		<jxl.version>2.6.3</jxl.version>
@@ -595,6 +596,11 @@
 				<groupId>joda-time</groupId>
 				<artifactId>joda-time</artifactId>
 				<version>${jodatime.version}</version>
+			</dependency>
+			<dependency><!-- 验证码工具 -->
+				<groupId>com.github.penggle</groupId>
+				<artifactId>kaptcha</artifactId>
+				<version>${kaptcha.version}</version>
 			</dependency>
 			<!--end-->
 
