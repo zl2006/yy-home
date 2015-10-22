@@ -846,6 +846,7 @@
 
 		</plugins>
 	</build>
+	<!--
 	<profiles>
 		<profile>
 			<id>default-profile</id>
@@ -878,5 +879,5 @@
 				</dependency>
 			</dependencies>
 		</profile>
-	</profiles>
+	</profiles>-->
 </project>
