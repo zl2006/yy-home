@@ -51,7 +51,7 @@
 		<springcache.version>3.5.0</springcache.version>
 		<taobao.tairclient.version>2.3.1</taobao.tairclient.version>
 		<springdataredis.version>1.6.0.RELEASE</springdataredis.version>
-		
+		<jedis.version>2.8.0</jedis.version>	
 		
 		<!--消息中间件-->
 		<rocketmq.version>3.2.2</rocketmq.version>	<!--淘宝的消息中间件-->
@@ -351,6 +351,11 @@
 				<artifactId>aws-elasticache-provider</artifactId>
 				<version>${springcache.version}</version>
 			</dependency>  
+			<dependency>
+				<groupId>redis.clients</groupId>
+				<artifactId>jedis</artifactId>
+				<version>${jedis.version}</version>
+			</dependency>
 			<!--
 			<dependency>
 				<groupId>com.googlecode.xmemcached</groupId>
