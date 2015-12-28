@@ -111,6 +111,7 @@
 
 		<!--任务调试-->
 		<quartz.version>2.2.1</quartz.version>
+		<cron4j.version>2.2.5</cron4j.version>
 			
 	</properties>
 	
@@ -784,6 +785,11 @@
 				<groupId>org.quartz-scheduler</groupId>
 				<artifactId>quartz</artifactId>
 				<version>${quartz.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>it.sauronsoftware</groupId>
+				<artifactId>cron4j</artifactId>
+				<version>${cron4j.version}</version>
 			</dependency>
 			<!--end-->
 	
