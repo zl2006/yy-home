@@ -6,9 +6,9 @@
     <version>1.0</version>
     <packaging>pom</packaging>
     <name>home</name>
-	
+
 	<!--属性定义-->
-	<properties>  
+	<properties>
 		<!--项目构建基本配置-->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.test.skip>false</maven.test.skip>
@@ -16,15 +16,15 @@
 		<java_target_version>1.7</java_target_version>
 
 		<!--日志-->
-		<slf4j.version>1.7.10</slf4j.version>	
-		<perf4j.version>0.9.16</perf4j.version>  
+		<slf4j.version>1.7.10</slf4j.version>
+		<perf4j.version>0.9.16</perf4j.version>
 
 		<!--web-->
 		<jspapi.version>2.2</jspapi.version>
 		<servlet.version>3.0.1</servlet.version>
 		<jstl.version>1.2</jstl.version>
 		<elapi.version>2.2</elapi.version>
-		
+
 		<!--j2ee框架-->
 		<spring.version>4.1.4.RELEASE</spring.version>
 		<spring-asm.version>3.1.4.RELEASE</spring-asm.version>
@@ -51,8 +51,8 @@
 		<springcache.version>3.5.0</springcache.version>
 		<taobao.tairclient.version>2.3.1</taobao.tairclient.version>
 		<springdataredis.version>1.6.0.RELEASE</springdataredis.version>
-		<jedis.version>2.8.0</jedis.version>	
-		
+		<jedis.version>2.8.0</jedis.version>
+
 		<!--消息中间件-->
 		<rocketmq.version>3.2.2</rocketmq.version>	<!--淘宝的消息中间件-->
 		<activemq.version>5.11.0</activemq.version>
@@ -71,13 +71,14 @@
 		<fileupload.version>1.2.2</fileupload.version>
 		<guava.version>18.0</guava.version>			<!--google提供的java超级工具集，超好用-->
 		<pinyin4j.version>1.0.0-SNAPSHOT</pinyin4j.version>
-		
+    <jsch.version>0.1.53</jsch.version>    <!-- sftp工具 -->
+
 		<!--模板引擎,布局组件-->
 		<velocity.version>1.7</velocity.version>
 		<freemarker.version>2.3.20</freemarker.version>
 		<velocity-tools.version>2.0</velocity-tools.version>
 		<tiles.version>3.0.5</tiles.version>
-		
+
 		<!--序列化-->
 		<hessian.version>4.0.7</hessian.version>
 		<protobuf.version>2.4.1</protobuf.version>
@@ -91,12 +92,12 @@
 		<surefire.version>2.5</surefire.version>
 		<junit.version>4.9</junit.version>
 		<hamcrest.core.version>1.3</hamcrest.core.version>
-		
+
 		<!--代理及字节码操作 -->
 		<aspectjrt.version>1.6.2</aspectjrt.version>
 		<aspectjweaver.version>1.6.11</aspectjweaver.version>
 		<cglib.version>2.2.2</cglib.version>
-		
+
 		<!--nio框架-->
 		<mina.version>2.0.4</mina.version>
 		<netty.version>3.6.3.Final</netty.version>
@@ -106,16 +107,16 @@
 		<jodatime.version>2.3</jodatime.version>
 		<kaptcha.version>2.3.2</kaptcha.version>
 
-		<!--其它-->		
+		<!--其它-->
 		<jxl.version>2.6.3</jxl.version>
 
 		<!--任务调试-->
 		<quartz.version>2.2.1</quartz.version>
 		<cron4j.version>2.2.5</cron4j.version>
-			
+
 	</properties>
-	
-    
+
+
 	<!--配置ｊａｒ仓库-->
 	<repositories>
 		<repository>
@@ -143,40 +144,40 @@
 		</pluginRepository>
 	</pluginRepositories>
 	<!--end-->
-	
+
 
 	<!--依赖申明-->
 	<dependencyManagement>
 		<dependencies>
 			<!--日志配置 start-->
-			<!-- slf4j -->  
-			<dependency>  
-			    <groupId>org.slf4j</groupId>  
-			    <artifactId>slf4j-api</artifactId>  
-			    <version>${slf4j.version}</version>  
-			</dependency>  
-			  
-			<!-- slf4j-log4j绑定 -->  
-			<dependency>  
-			    <groupId>org.slf4j</groupId>  
-			    <artifactId>slf4j-log4j12</artifactId>  
-			    <version>${slf4j.version}</version>  
-			</dependency>  
-			  
-			<!-- common-logging 实际调用slf4j -->  
-			<dependency>  
-			    <groupId>org.slf4j</groupId>  
-			    <artifactId>jcl-over-slf4j</artifactId>  
-			    <version>${slf4j.version}</version>  
-			</dependency>  
-			  
-			<!-- java.util.logging 实际调用slf4j -->  
-			<dependency>  
-			    <groupId>org.slf4j</groupId>  
-			    <artifactId>jul-to-slf4j</artifactId>  
-			    <version>${slf4j.version}</version>  
-			</dependency>  
-			  
+			<!-- slf4j -->
+			<dependency>
+			    <groupId>org.slf4j</groupId>
+			    <artifactId>slf4j-api</artifactId>
+			    <version>${slf4j.version}</version>
+			</dependency>
+
+			<!-- slf4j-log4j绑定 -->
+			<dependency>
+			    <groupId>org.slf4j</groupId>
+			    <artifactId>slf4j-log4j12</artifactId>
+			    <version>${slf4j.version}</version>
+			</dependency>
+
+			<!-- common-logging 实际调用slf4j -->
+			<dependency>
+			    <groupId>org.slf4j</groupId>
+			    <artifactId>jcl-over-slf4j</artifactId>
+			    <version>${slf4j.version}</version>
+			</dependency>
+
+			<!-- java.util.logging 实际调用slf4j -->
+			<dependency>
+			    <groupId>org.slf4j</groupId>
+			    <artifactId>jul-to-slf4j</artifactId>
+			    <version>${slf4j.version}</version>
+			</dependency>
+
 			<dependency><!--性能日志-->
 				<groupId>org.perf4j</groupId>
 				<artifactId>perf4j</artifactId>
@@ -285,8 +286,8 @@
 				<version>${spring.version}</version>
 			</dependency>
 
-			
-			
+
+
 			<!--数据库配置 start-->
 			<dependency><!-- mybatis DAO中间件-->
 				<groupId>org.mybatis</groupId>
@@ -319,13 +320,13 @@
 				<version>${c3p0.version}</version>
 			</dependency>
 			<dependency> <!--alibaba自研发连接池,支持监控-->
-				<groupId>com.alibaba</groupId>  
-				<artifactId>druid</artifactId>  
-				<version>${druid.version}</version>  
-			</dependency> 
+				<groupId>com.alibaba</groupId>
+				<artifactId>druid</artifactId>
+				<version>${druid.version}</version>
+			</dependency>
 			<!--数据库配置 end-->
-			
-			
+
+
 			<!--缓存配置 start-->
 			<dependency>
 				<groupId>org.springframework.data</groupId>
@@ -345,13 +346,13 @@
 			<dependency>
 				<groupId>com.google.code.simple-spring-memcached</groupId>
 				<artifactId>xmemcached-provider</artifactId>
-				<version>${springcache.version}</version> 
-			</dependency> 
+				<version>${springcache.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>com.google.code.simple-spring-memcached</groupId>
 				<artifactId>aws-elasticache-provider</artifactId>
 				<version>${springcache.version}</version>
-			</dependency>  
+			</dependency>
 			<dependency>
 				<groupId>redis.clients</groupId>
 				<artifactId>jedis</artifactId>
@@ -366,7 +367,7 @@
 			<dependency>
 				<groupId>com.google.code.simple-spring-memcached</groupId>
 				<artifactId>spring-cache</artifactId>
-				<version>${springcache.version}</version>	
+				<version>${springcache.version}</version>
 				<exclusions>
 					<exclusion>
 						<artifactId>spring-asm</artifactId>
@@ -381,8 +382,8 @@
 			</dependency>
 			<!--缓存配置 end-->
 
-			
-	
+
+
 			<!--单元测试配置 start-->
 			<dependency>
 				<groupId>org.mockito</groupId>
@@ -402,20 +403,20 @@
 				<version>${surefire.version}</version>
 				<scope>test</scope>
 			</dependency>
-			<dependency>  
-			    <groupId>org.hamcrest</groupId>  
-			    <artifactId>hamcrest-core</artifactId>  
-			    <version>${hamcrest.core.version}</version>  
-			    <scope>test</scope>  
-			</dependency>  
+			<dependency>
+			    <groupId>org.hamcrest</groupId>
+			    <artifactId>hamcrest-core</artifactId>
+			    <version>${hamcrest.core.version}</version>
+			    <scope>test</scope>
+			</dependency>
 			<!--单元测试配置 end-->
-			
-			
+
+
 			<!--aop代理配置-->
 			<dependency>
 				<groupId>org.aspectj</groupId>
 				<artifactId>aspectjrt</artifactId>
-			  	<version>${aspectjrt.version}</version>  
+			  	<version>${aspectjrt.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.aspectj</groupId>
@@ -428,14 +429,14 @@
 				<version>${cglib.version}</version>
 			</dependency>
 			<!--end-->
-			
-			
+
+
 			<!--工具配置-->
 			<dependency><!--json操作-->
 				<groupId>com.alibaba</groupId>
 				<artifactId>fastjson</artifactId>
 				<version>${fastjson.version}</version>
-			</dependency>	
+			</dependency>
 			<dependency><!--常用工具类-->
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-lang3</artifactId>
@@ -507,9 +508,14 @@
 				<artifactId>guava</artifactId>
 				<version>${guava.version}</version>
 			</dependency>
+      <dependency>
+          <groupId>com.jcraft</groupId>
+          <artifactId>jsch</artifactId>
+          <version>${jsch.version}</version>
+      </dependency>
 			<!--end-->
-			
-			
+
+
 			<!--序列化-->
 			<dependency>
 				<groupId>com.caucho</groupId>
@@ -543,7 +549,7 @@
 			</dependency>
 			<!--end-->
 
-			
+
 			<!--nio 框架-->
 			<dependency>
 				<groupId>org.apache.mina</groupId>
@@ -556,7 +562,7 @@
 				<version>${netty.version}</version>
 			</dependency>
 			<!--end -->
-			
+
 			<!--jee 标准组件-->
 			<dependency>
 				<groupId>javax.servlet</groupId>
@@ -590,7 +596,7 @@
 				<scope>provided</scope>
 			</dependency>
 			<!--end-->
-            
+
 			<!-- 其它-->
 			<dependency><!--ＳＥＯ优化,主要重写向html,假静态-->
 				<groupId>org.tuckey</groupId>
@@ -603,7 +609,7 @@
 				<version>${jxl.version}</version>
 			</dependency>
 			<!--end-->
-				
+
 			<!--验证与格式化-->
 			<dependency>
 				<groupId>org.hibernate</groupId>
@@ -658,7 +664,7 @@
 
 			<!--服务化框架-->
 			<dependency>
-				<groupId>com.alibaba</groupId>	
+				<groupId>com.alibaba</groupId>
 				<artifactId>dubbo</artifactId>
 				<version>${dubbo.version}</version>
 				<exclusions>
@@ -733,7 +739,7 @@
 				<artifactId>activemq-all</artifactId>
 				<version>${activemq.version}</version>
 			</dependency>
-			
+
 
 
 			<!-- 模板引擎 -->
@@ -792,11 +798,11 @@
 				<version>${cron4j.version}</version>
 			</dependency>
 			<!--end-->
-	
+
 
 		</dependencies>
 	</dependencyManagement>
-	
+
 	<build>
 		<sourceDirectory>src/main/java</sourceDirectory>
 		<testSourceDirectory>src/test/java</testSourceDirectory>
