@@ -793,9 +793,9 @@
 				<version>${quartz.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>it.sauronsoftware</groupId>
-				<artifactId>cron4j</artifactId>
-				<version>${cron4j.version}</version>
+			    <groupId>it.sauronsoftware.cron4j</groupId>
+			    <artifactId>cron4j</artifactId>
+			    <version>${cron4j.version}</version>
 			</dependency>
 			<!--end-->
 
