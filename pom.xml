@@ -47,7 +47,7 @@
 
 		<!--缓存中间件-->
 		<ehcache.version>1.6.1</ehcache.version>
-		<xmemcached.version>1.4.2</xmemcached.version>
+		<xmemcached.version>2.0.0</xmemcached.version>
 		<springcache.version>3.5.0</springcache.version>
 		<taobao.tairclient.version>2.3.1</taobao.tairclient.version>
 		<springdataredis.version>1.6.0.RELEASE</springdataredis.version>
@@ -358,12 +358,12 @@
 				<artifactId>jedis</artifactId>
 				<version>${jedis.version}</version>
 			</dependency>
-			<!--
 			<dependency>
 				<groupId>com.googlecode.xmemcached</groupId>
 				<artifactId>xmemcached</artifactId>
 				<version>${xmemcached.version}</version>
 			</dependency>
+			<!--
 			<dependency>
 				<groupId>com.google.code.simple-spring-memcached</groupId>
 				<artifactId>spring-cache</artifactId>
@@ -768,20 +768,38 @@
 				<artifactId>freemarker</artifactId>
 				<version>${freemarker.version}</version>
 			</dependency>
-			<dependency><!--tiles-->
-			    <groupId>org.apache.tiles</groupId>
-			    <artifactId>tiles-extras</artifactId>
-			    <version>${tiles.version}</version>
-			</dependency>
-			<dependency>
-			    <groupId>org.apache.tiles</groupId>
-			    <artifactId>tiles-servlet</artifactId>
-			    <version>${tiles.version}</version>
-			</dependency>
-			<dependency>
-			    <groupId>org.apache.tiles</groupId>
-			    <artifactId>tiles-jsp</artifactId>
-			    <version>${tiles.version}</version>
+			<!-- Apache Tiles -->
+		    <dependency>
+		        <groupId>org.apache.tiles</groupId>
+		        <artifactId>tiles-core</artifactId>
+		        <version>${tiles.version}</version>
+		    </dependency>
+		
+		    <dependency>
+		        <groupId>org.apache.tiles</groupId>
+		        <artifactId>tiles-jsp</artifactId>
+		        <version>${tiles.version}</version>
+		    </dependency>
+		
+		     <dependency>
+		        <groupId>org.apache.tiles</groupId>
+		        <artifactId>tiles-api</artifactId>
+		        <version>${tiles.version}</version>
+		    </dependency>
+		     <dependency>
+		        <groupId>org.apache.tiles</groupId>
+		        <artifactId>tiles-servlet</artifactId>
+		        <version>${tiles.version}</version>
+		    </dependency>
+		     <dependency>
+		        <groupId>org.apache.tiles</groupId>
+		        <artifactId>tiles-template</artifactId>
+		        <version>${tiles.version}</version>
+		    </dependency>
+		    <dependency>
+				<groupId>org.apache.tiles</groupId>
+				<artifactId>tiles-extras</artifactId>
+				<version>${tiles.version}</version>
 			</dependency>
 			<!--end-->
 
